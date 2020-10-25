@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#NOTE
+# NOTE
 You need to edit the Wit.js component with your Server Access Token in order for the application to work properly.
 
 const client = new Wit({accessToken: 'MY_TOKEN'});
