@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+#NOTE
+You need to edit the Wit.js component with your Server Access Token in order for the application to work properly.
+
+const client = new Wit({accessToken: 'MY_TOKEN'});
+client.message('what is the weather in London?', {})
+.then((data) => {
+  console.log('Yay, got Wit.ai response: ' + JSON.stringify(data));
+})
+.catch(console.error);
+
 ## Available Scripts
 
 In the project directory, you can run:
