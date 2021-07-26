@@ -1,78 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Ramhacks2020NLTKRawParser (Updated 26 Jul 2021)
+NLTKRawParser and Imager
 
-# NOTE
-You need to edit the Wit.js component with your Server Access Token in order for the application to work properly.
+(Best Digital Forensics Hack)
 
-const client = new Wit({accessToken: 'MY_TOKEN'});
-client.message('what is the weather in London?', {})
-.then((data) => {
-  console.log('Yay, got Wit.ai response: ' + JSON.stringify(data));
-})
-.catch(console.error);
+## Inspiration
+When trying to locate data through logical or physical approaches, it can be difficult to decides which key words and phrases to use when parsing through data sets. Some tools provide similar ideas but require large amounts of time to prepare the do background tasks due to their overall robust nature. This introduces the need to parse a device in the logical or physical manner with less amount of extra computing or additional tasks/preprocessing involved. 
 
-## Available Scripts
+## What it does
+The purpose of this program is to use the Natural Language Toolkit to analyze a set of text.
+The NLTK provides sanitized and specifcally grouped text segments.
+These Text segments allow for the program to search accross raw data for phrases as key words. 
+The Program can parse files and physical disks in binary formart block by block in search for the data.
+When the data is found the program outputs the block number index and what key word was found in a text file. 
+It is essentially a raw preview and parse program of logical and physical data
+This becomes exponentially more useful when using words found images against hundreds of Gigabytes of data or even  a couple Terabytes of data. The program was tested on one large text sample broken in to several text files. 
 
-In the project directory, you can run:
 
-### `npm start`
+## How I built it
+I used Python as my base programming language. I then utilized the Gooey library which is a UI wrapper for Python's ArgParse library and provides visual verbose functionality.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I then broke down the sub requirements into:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+installation of NLTK and corresponding libraries
 
-### `npm test`
+generate and obtain test data
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+build algorithm/functionality of Natural Language Processing NLTK to read from a text file and parse accordingly
 
-### `npm run build`
+Build algorithm and functionality to check and read physical disks and logical files in binary format.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Create robust and simple UI to allow the user to complete their task
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Combine NLTK generated data set and binary parsing of data to sequentially iterate block by block through data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a simple logging/reporting functionality for use to look back into when task was complete so user can make on the fly triaging decisions.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Challenges I ran into
+Physical access to disks and binary parsing of files and physical disks
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+IO issues with opening closing writing to and from files
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Parsing arguments given by user and handling exceptions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Accomplishments that I'm proud of
+Accessing and Parsing Raw Physical disks in Python with minimal overhead
 
-## Learn More
+Using NLP and NLTK to generate clean keys words and phrases
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## What I learned
+Using Natural Language Processing NLTK to read and tokenize and sanitize text( stop words)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+combining IO of Raw physical disks
 
-### Code Splitting
+reading binary block by block
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+decoding binary to readable text.
 
-### Analyzing the Bundle Size
+improving error handling from binary IO
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## What's next for NLTKParser
 
-### Making a Progressive Web App
+Improved performance through multithreading
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Improved NLP and NLTK implementation
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+More Robust Reporting features
